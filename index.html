@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Wardy’s Cozy Arcade</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="menu" class="menu-glass">
+    <h1>Wardy’s Cozy Arcade</h1>
+    <div class="menu-cards">
+      <button class="mode-btn" data-mode="catch">
+        <div class="menu-emoji">👩🏻‍🦱</div>
+        <div class="menu-title">Avoid the Knife</div>
+        <div class="menu-desc">Catch cupcake, bags, bow tie & coffee(I wanted matcha), avoid the knife 🗡️! <br><b>3 lives</b></div>
+      </button>
+   <button class="mode-btn" data-mode="stack">
+        <div class="menu-emoji">🧁</div>
+        <div class="menu-title">Cupcake Stacker</div>
+        <div class="menu-desc">Stack cupcakes as high as you can!</div>
+      </button>
+      <button class="mode-btn" data-mode="match3">
+        <div class="menu-emoji">🍬</div>
+        <div class="menu-title">Sweet Match</div>
+        <div class="menu-desc">Match-3 game with sweets, bags, and charms!</div>
+      </button>
+      <button class="mode-btn" data-mode="memory">
+        <div class="menu-emoji">🧠</div>
+        <div class="menu-title">Memory Match</div>
+        <div class="menu-desc">Find all the matching pairs of cute items!</div>
+      </button>
+    </div>
+    <div style="margin-top:2.2em;font-size:1.04em;color:#a780b8;opacity:0.88;">For Wardy, with love 💖</div>
+  </div>
+  <div id="game-ui" style="display:none;">
+    <div id="score">Score: 0</div>
+    <button id="restart-btn" style="display:none;">Restart</button>
+  </div>
+  <button id="back-in-game" style="display:none;">← Back to Menu</button>
+  <canvas id="game"></canvas>
+  <div id="gameover" style="display:none;">
+    <div class="over-card">
+      <h2>Game Over!</h2>
+      <div id="final-score"></div>
+      <button id="back-btn">Back to Menu</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
