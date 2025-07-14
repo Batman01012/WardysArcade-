@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Montserrat:wght@600;700&display=swap');
+
+/* --- Pink Stars Background --- */
+body, html {
+  margin: 0; padding: 0;
+  width: 100vw; height: 100vh; overflow: hidden;
+  font-family: 'Montserrat', 'Quicksand', Arial, sans-serif;
+  background: radial-gradient(ellipse at 60% 20%, #ffe2f3 0%, #ffeef9 45%, #f5eaff 100%);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'><polygon points='40,12 44,30 62,30 46,40 52,58 40,48 28,58 34,40 18,30 36,30' fill='%23ffc2e7' opacity='0.28'/></svg>"), 
+    url("data:image/svg+xml;utf8,<svg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'><polygon points='24,5 27,18 41,18 29,26 33,40 24,32 15,40 19,26 7,18 21,18' fill='%23ffa3e0' opacity='0.19'/></svg>");
+  background-size: 110px, 68px;
+  background-position: 0 0, 38px 56px;
+  background-repeat: repeat;
+  animation: bgMove 48s linear infinite;
+}
+@keyframes bgMove {
+  to { background-position: 400px 400px, 438px 456px; }
+}
+
+.menu-glass {
+  background: rgba(255,255,255,0.88);
+  box-shadow: 0 8px 32px #ecadff33, 0 2px 22px #ffd7fc44;
+  border-radius: 2.1em;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 2.9em 1.7em 2.6em 1.7em;
+  position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%,-52%);
+  display: flex; flex-direction: column; align-items: center;
+  border: 1.2px solid #f3e2fc;
+  backdrop-filter: blur(6.5px);
+  transition: box-shadow .24s;
+}
+
+#menu h1 {
+  font-family: 'Montserrat', 'Quicksand', Arial, sans-serif;
+  font-size: 2.34em; color: #bb53bc; font-weight: 800;
+  margin-bottom: 2.1em; letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px #eebbf477, 0 2px 7px #fff9;
+  filter: brightness(1.13);
+}
+
+.menu-cards {
+  display: flex; flex-direction: column; gap: 1.6em; width: 100%;
+}
+
+.mode-btn {
+  background: linear-gradient(118deg,#fff1fa 0%,#fbe8ff 85%);
+  color: #ad48c2;
+  font-family: 'Montserrat', 'Quicksand', Arial, sans-serif;
+  font-weight: 700; border: none;
+  border-radius: 1.7em; padding: 1.26em 0.2em;
+  box-shadow: 0 2px 17px #f7ccf466, 0 2px 9px #fff9;
+  cursor: pointer;
+  transition: box-shadow .20s, background .16s, transform .1s;
+  display: flex; flex-direction: row; align-items: center; justify-content: flex-start;
+  gap: 1.15em; width: 100%; min-width: 210px; text-align: left;
+  outline: none;
+  font-size: 1.08em;
+  position: relative;
+  will-change: transform;
+}
+.mode-btn:active { transform: scale(0.97); }
+.mode-btn:hover, .mode-btn:focus {
+  background: linear-gradient(120deg,#fde1fa 0%,#e0f6f4 100%);
+  box-shadow: 0 6px 22px #f8f1fb55, 0 1px 7px #fff9;
+  color: #ad48c2;
+}
+
+.menu-emoji {
+  font-size: 2.5em; margin-right: 0.11em;
+  filter: drop-shadow(0 2px 7px #fed8fb80);
+  transition: transform .12s;
+}
+.mode-btn:hover .menu-emoji { transform: scale(1.08) rotate(-7deg); }
+.menu-title {
+  font-family: 'Montserrat', 'Quicksand', Arial, sans-serif;
+  font-size: 1.19em; font-weight: 800; color: #bc67e0;
+  margin-bottom: 0.1em;
+}
+.menu-desc {
+  font-family: 'Quicksand', 'Montserrat', Arial, sans-serif;
+  font-size: 0.97em; color: #ad8ec2; font-weight: 600;
+  margin-top: 0.09em; margin-bottom: -0.23em;
+  opacity: 0.92;
+}
+#game-ui {
+  top: 0; left: 0;
+  width: 100vw; text-align: center; z-index: 3;
+  padding-top: 2.2vh;
+  position: absolute;
+  pointer-events: none;
+}
+#score {
+  font-size: 1.33em; color: #a967c7;
+  margin: 0.44em 0 0.36em 0; font-weight: 700;
+  text-shadow: 0 2px 12px #ffc6ed23;
+  background: rgba(255,255,255,0.77);
+  padding: 0.14em 1.45em;
+  border-radius: 1em;
+  display: inline-block;
+  pointer-events: all;
+}
+#restart-btn {
+  margin-top: 1.2em; font-size: 1.13em;
+  background: linear-gradient(90deg,#f7e8ff 0%,#d4f0ff 100%);
+  color: #a067c7; font-weight: 700;
+  border: none; border-radius: 1.3em;
+  padding: 0.68em 2.36em; cursor: pointer;
+  box-shadow: 0 1px 8px #f7ccf4b1;
+  pointer-events: all;
+}
+#restart-btn:hover {
+  background: linear-gradient(90deg,#fff1fb 0%,#ffe5fb 100%);
+}
+
+#game {
+  position: absolute; left: 0; top: 0;
+  width: 100vw; height: 100vh; background: transparent;
+  display: block; z-index: 1; touch-action: manipulation;
+  outline: none;
+}
+
+#gameover {
+  top: 0; left: 0; height: 100vh;
+  background: rgba(255,245,252,0.99);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  z-index: 20; text-align: center;
+  position: absolute; width: 100vw;
+}
+.over-card {
+  background: #fffafdde;
+  box-shadow: 0 2px 22px #e8a4f022, 0 2px 6px #ffeef8aa;
+  border-radius: 1.55em;
+  padding: 2.3em 2.4em 2.1em 2.4em;
+  max-width: 360px; margin: 0 auto;
+  border: 1px solid #fad8fc85;
+  filter: blur(0.0px) brightness(1.05);
+  animation: floatUp .62s cubic-bezier(.48,1.7,.46,.82);
+}
+@keyframes floatUp {
+  0% { opacity:0; transform: translateY(38px) scale(.89);}
+  100% {opacity:1; transform: translateY(0) scale(1);}
+}
+#gameover h2 { color: #be63ca; font-size: 2.19em; margin-bottom: 0.62em;}
+#final-score { color: #ad5fc1; font-size: 1.19em; margin-bottom: 1.53em; }
+#back-btn {
+  margin-top: 1.33em; font-size: 1.16em;
+  background: linear-gradient(90deg,#f7e8ff 0%,#d4f0ff 100%);
+  color: #a067c7; font-weight: 700;
+  border: none; border-radius: 1.22em;
+  padding: 0.62em 2.1em; cursor: pointer;
+  pointer-events: all;
+}
+#back-btn:hover { background: linear-gradient(90deg,#fff1fb 0%,#ffe5fb 100%); }
+
+/* --- Back to Menu button in-game --- */
+#back-in-game {
+  position: absolute;
+  top: 1.13em; left: 1.13em;
+  z-index: 10;
+  background: linear-gradient(90deg,#f7e8ff 0%,#d4f0ff 100%);
+  color: #a067c7;
+  font-family: 'Montserrat', 'Quicksand', Arial, sans-serif;
+  font-size: 1.13em;
+  font-weight: 700;
+  border: none; border-radius: 1.24em;
+  padding: 0.44em 1.39em;
+  box-shadow: 0 1px 7px #f7ccf4b1;
+  cursor: pointer;
+  opacity: 0.97;
+  transition: background .14s, color .13s;
+  pointer-events: all;
+}
+#back-in-game:hover {
+  background: linear-gradient(90deg,#fff1fb 0%,#ffe5fb 100%);
+  color: #ba59c7;
+}
+
+@media (max-width: 700px) {
+  .menu-glass { max-width: 99vw; padding: 1.8em 0.15em 2em 0.15em;}
+  #menu h1 { font-size: 1.11em;}
+  .mode-btn { font-size: 0.99em; padding: 0.83em 0.18em; min-width:unset;}
+  #back-in-game {
+    font-size: 1em;
+    padding: 0.39em 1em;
+    top: 0.7em; left: 0.7em;
+  }
+  .over-card { padding: 1.3em 0.6em 1.1em 0.6em;}
+}
+
+/* Minor scroll-bar removal for mobile apps */
+::-webkit-scrollbar { width: 0 !important; height: 0 !important;}
