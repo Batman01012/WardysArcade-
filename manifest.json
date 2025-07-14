@@ -1,0 +1,23 @@
+{
+  "name": "Wardy’s Cozy Arcade",
+  "short_name": "Wardy Arcade",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffeef9",
+  "theme_color": "#bb53bc",
+  "description": "A boutique pastel arcade full of cute mini-games, designed for Wardy with love.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "lang": "en"
+}
